@@ -1,0 +1,37 @@
+﻿<div id="app">
+    <div>
+        
+    </div>
+    <input v-model="roomName"/>
+    <button v-on:click="CreateRoom()">Создать комнату</button>
+	<div class="container">
+		<table>
+			<thead>
+				<tr>
+					<th>Комната</th>
+					<th>Время создания</th>
+					<th>Игроки</th>
+				</tr>
+			</thead>
+			<tbody >
+				<tr v-for="room in rooms">
+					<td>{{room.title}}</td>
+					<td>{{room.created}}</td>
+					<td> 4 / {{room.persons.length}}</td>
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+
+   @*  <div v-for="room in rooms">
+        {{room}}
+
+    </div> *@
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+
+<script src="~/js/room.js" asp-append-version="true"></script>
